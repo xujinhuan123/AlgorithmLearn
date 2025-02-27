@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <queue>
-using namespace std;
+using namespace std; // 加点东西
 
 typedef struct TNode
 {
