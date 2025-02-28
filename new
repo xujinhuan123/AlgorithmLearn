@@ -1,8 +1,0 @@
-#include <iostream>
-using namespace std;
-
-int main(int argc, const char **argv)
-{
-    int x; // 这是内容 在新分支上
-    return 0;
-}
