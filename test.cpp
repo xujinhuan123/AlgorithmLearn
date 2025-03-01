@@ -1,13 +1,13 @@
 #include <iostream>
-#include <queue>
+#include <stack>
 using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
-    queue<int> test;
-    test.push(1);
-    cout << "hello,world!" << endl;
+    stack<int> s;
+    s.push(42);
+    cout << "Top of stack: " << s.top() << endl;
+    s.pop();
+    cout << "Stack is empty: " << boolalpha << s.empty() << endl;
     return 0;
 }

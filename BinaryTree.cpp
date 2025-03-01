@@ -1,7 +1,7 @@
 #include <iostream>
-#include <stack>
 #include <queue>
-using namespace std; // 加点东西
+#include <stack>
+using namespace std;
 
 typedef struct TNode
 {
@@ -137,6 +137,32 @@ void BinaryTree::INOrder(TNode *t, void (*visit)(TNode *))
         visit(t);
         INOrder(t->right, visit);
     }
+}
+
+// 利用栈实现非递归的中序遍历
+void INOrder2(TNode *t, void (*visit)(TNode *))
+{
+    vector<int> result;    // 存储遍历结果
+    stack<TNode *> Astack; // 辅助栈
+    TNode *current = t;    // 当前结点
+    while (current != nullptr || !Astack.empty())
+    {
+        // 遍历到最左节点，并将路上的节点压入栈
+        while (current != nullptr)
+        {
+            Astack.push(current);
+            current = current->left;
+        }
+
+        // 弹出栈顶结点访问
+        current = Astack.top();
+        Astack.pop();
+        result.push_back(current->Data);
+
+        // 转向右子树
+        current = current->right;
+    }
+    // return result;
 }
 
 // 后序遍历
