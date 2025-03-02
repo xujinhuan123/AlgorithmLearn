@@ -18,10 +18,9 @@ class Solution
 {
 public:
     vector<int> ans;
-    // 效率很差 需要学习 =====================================
-    // 使用队列实现中序遍历？  XX 使用栈实现非递归的
-    //  使用先序遍历应该得到一组升序数据
-    //  对于有重复数据的应该怎么办？
+    // 使用栈实现非递归的
+    //   使用先序遍历应该得到一组升序数据
+    //   注意考虑重复数据
     bool isValidBST(TreeNode *root)
     {
         vector<int> data = midordor(root);
